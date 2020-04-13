@@ -1,0 +1,16 @@
+* Purpose
+
+This repository is used for the automated build of a docker image
+containing gphto-sync.
+
+* Usage
+  
+** Credentials setup
+   1. Follow the instructions from [[https://github.com/gilesknap/gphotos-sync][gphoto-sync]] to create
+      ~client_secret.json~ and place it in a folder
+      e.g. ~gsync-config~
+   2. 
+** Run a sync
+   #+BEGIN_SRC shell
+   docker run --rm --name gsync -v "$PWD/gsync-config:/home/gsync/.config" -d dfrkp/docker-gphoto-sync /path/to/photos/folder
+   #+END_SRC
